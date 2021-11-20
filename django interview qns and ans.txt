@@ -1,0 +1,150 @@
+1.what is model.?
+ans:
+====
+A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Generally, each model maps to a single database table.
+=>Each model is a Python class that subclasses django.db.models.Model.
+=>Each attribute of the model represents a database field.
+=> Django gives you an automatically-generated database-access 
+
+2.what is Model Manager.?
+ans:
+===
+=>A Manager is the interface through which database query operations are provided to Django models. At least one Manager exists for every model in a Django application. 
+=>Model manager is used to interact with database.
+=>By default, Django adds a Manager with the name objects to every Django model class. django.db.models.manager.Manager
+
+3.what is Custom Model Manager.?
+ans:
+====
+=>You can use a custom Manager in a particular model by extending the base Manager class and instantiating your custom Manager in your model. 
+=>A custom Manager method can return anything you want. 
+=>It doesn’t have to return a QuerySet.to modify the initial QuerySetthe Manager returnsto add extra Manager methods
+
+4.what are Model Relationship.?
+ans:
+====
+In django provides they are three types of Model Relationship they are.
+
+One to One Relationship :- 
+==== == === ============
+             To define a one-to-one relationship, use OneToOneField. You use it just like any other Field type by including it as a class attribute of your model. 
+
+Many to One Relationship :-
+===== == === ============
+               To define a many-to-one relationship, use ForeignKey. You use it just like any other Field type: by including it as a class attribute of your model.
+
+Many to Many Relationships :-
+==== === ==== =============
+               To define a many-to-many relationship, use ManyToManyField. You use it just like any other Field type: by including it as a class attribute of your model.
+
+5.What are the model inheritance styles in Django?
+ans:
+==== 
+  In djano provides they are three types of model inheritance they are.
+
+Abstract base classes:-
+======= ===== ========
+        when you only want parent's class to hold information that you don't want to type out for each child model.
+
+Multi-table Inheritance:-
+===== ===== ===========
+       if you want inherit the parent table properties to child table properties and need each model to have its database table.
+
+Proxy models:
+==== ========
+      If you only want to modify the Python level behavior of the model, without changing the model's fields.
+
+6.What are static files?
+ans:
+====
+  =>Static files in Django are those files are additional files such as the CSS, images or JavaScript files. 
+  =>These files are managed by django.contrib.staticfiles. 
+  =>These files are created within the project app directory by creating a subdirectory named as static.
+
+7.What are ‘views’?
+ans:
+====
+ view is a python file here,we can write our business logic and we will send the request to models and carry the data from models and it will be render to templates
+
+Example:
+=======
+   from django.http import HttpResponse
+    def sample_function(request):
+      return HttpResponse(“Welcome to Django”)
+There are two types of views:
+Function-Based Views:
+========= ===== ====
+           In this, we import our view as a function.
+Class-based Views:
+====== ==== =====
+       It’s an object-oriented approach.
+
+8. What is Django ORM?
+ans:
+====
+   ORM stands for Object Relational Mapper witch enables  to interact with databases in a more pythonic way like we can avoid writing raw queries, 
+   it is possible to retrieve, save, delete and perform other operations over the database without ever writing any SQL query. 
+   It works as an abstraction layer between the models and the database
+
+9.What are ‘templates’?
+ans:
+====
+  Templates is nothing but it is a presentation layer it completly deals with user interface here,we can write our variabletags templatetag and conditions
+
+they are 4 types of templates tags they are.
+==== === == ==== === ========= ==== ==== ===
+   variables:
+   =========
+     {{name}}
+  
+   tags:
+   ====
+  {% csrf_tokens %}
+
+ filter:
+ ====== 
+  {{django|title}}
+
+  coments:
+  ========
+  {# the file #}
+  
+10.What is Django Rest Framework(DRF)?
+ans:
+====
+   Django Rest Framework is an open-source framework based upon Django which lets you create RESTful APIs rapidly
+
+11.What is Jinja templating?
+ans:
+===
+  Jinja Templating is a very popular templating engine for Python, the latest version is Jinja2. 
+ 
+12.Django Project vs Django Application.?
+ans:
+==== 
+    A Django project is a collection of applications and configurations which forms a full web application.
+ 
+   Eg: Bank Project
+ 
+  A Dango Application is responsible to perform a particular task in our entire web application.
+ 
+Eg: loan app
+   registration app
+    polling app etc
+
+13.what is cookies.?
+ans:
+====
+A cookie is a small piece of information which is stored in the client browser. It is used to store user's data in a file permanently (or for the specified time).
+Cookie has its expiry date and time and removes automatically when gets expire. Django provides built-in methods to set and fetch cookie.
+
+14.what is session .?
+ ans:
+=====
+  A session is a mechanism to store information on the server side during the interaction with the web application. 
+  In Django, by default session stores in the database and also allows file-based and cache based sessions.
+
+15.What is a slug and what does it mean ?
+ans:
+====
+   Slug is a URL friendly It only contain Letters, Numbers, Underscores or Hyphens.Slugs are commonly save with the respective content and it pass as a URL string.
